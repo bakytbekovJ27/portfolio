@@ -395,40 +395,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
-}
-.proj-imgbx {
-  position: relative;
-  border-radius: 30px;
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-.proj-imgbx::before {
-  content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  opacity: 0.85;
-  position: absolute;
-  width: 100%;
-  height: 0;
-  transition: 0.4s ease-in-out;
-}
-.proj-imgbx:hover::before {
-  height: 100%;
-}
-.proj-txtx {
-  position: absolute;
-  text-align: center;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
-  opacity: 0;
-  width: 100%;
-}
-.proj-imgbx:hover .proj-txtx {
-  top: 50%;
-  opacity: 1;
-}
+  border-radius: 0 55px 55px 0;}
+
 .proj-txtx h4 {
   font-size: 30px;
   font-weight: 700;
@@ -599,4 +567,86 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+.proj-imgbx {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.proj-imgbx img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+
+.proj-imgbx:hover img {
+  transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  transition: height 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+
+.proj-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+.proj-txtx h4 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.proj-txtx span {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.proj-txtx .btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #4A2FBD;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.proj-txtx .btn:hover {
+  background-color: #4A2FBD;
+  color: #fff;
+  transform: scale(1.05);
 }
